@@ -45,7 +45,7 @@ köçürün:
 ```
 your_project/
 ├── manage.py
-├── django_view_logger/     <- bu qovluğu köçürün
+├── logger/     <- bu qovluğu köçürün
 │   ├── __init__.py
 │   ├── base.py
 │   └── view_logger.py
@@ -256,7 +256,53 @@ Terminal:
 
 ---
 
-## 8. Loglari bazaya yazmaq (`LogEntry` modeli)
+## 8. Loglari fayla yazmaq (`log_file`)
+
+Bazadan (`db_log`) fərqli, sadə fayl əsaslı log da lazımdırsa, `log_file`
+parametrini istifadə et. Bu, **Django-dan asılı deyil** — həm
+`BaseLogger`, həm də `ViewLogger` ilə işləyir, hətta Django
+quraşdırılmayan mühitdə (adi script, Celery task) belə.
+
+```python
+from django_view_logger import BaseLogger
+
+logger = BaseLogger(name="scraper.emlaksat", log_file="logs/app.log")
+logger.info("Scraping başladı", total_pages=50)
+```
+
+```python
+from django_view_logger import ViewLogger
+
+logger = ViewLogger.from_request(
+    request,
+    view_name="owner_list",
+    log_file="logs/views.log",
+)
+logger.request_started()
+```
+
+- Terminala yazılan **hər** log eyni zamanda göstərilən fayla da
+  (append rejimində) yazılır — formatı eynidir.
+- Fayl və yolundakı qovluqlar mövcud deyilsə, avtomatik yaradılır
+  (`logs/` qovluğu yoxdursa özü açır).
+- Həssas məlumatlar (`password`, `token` və s.) fayl daxilində də
+  maskalanır.
+- `bind()` ilə yaradılan logger-lər `log_file` dəyərini avtomatik
+  miras alır.
+- Fayla yazma zamanı hər hansı xəta (icazə problemi, disk dolu və s.)
+  səssizcə keçilir — terminal logu buna baxmayaraq davam edir, proqram
+  çökmür.
+- İstəsən `db_log` və `log_file`-ı **eyni anda** işlədə bilərsən —
+  bir log çağırışı terminala, fayla və bazaya paralel yazılar.
+
+> **Qeyd:** Bu, sadə append-based fayl yazmasıdır (log rotation
+> yoxdur). Böyük trafikli production layihələrdə fayl ölçüsünü
+> nəzarətdə saxlamaq üçün əməliyyat sistemi səviyyəsində
+> `logrotate` kimi alətlərdən istifadə etməyi məsləhət görürük.
+
+---
+
+## 9. Loglari bazaya yazmaq (`LogEntry` modeli)
 
 Paket eyni zamanda `LogEntry` adlı Django modeli ilə gəlir. Bu, tamamilə
 **istəyə bağlıdır** — istəməsən heç toxunmursan, modul əvvəlki kimi
@@ -342,7 +388,7 @@ logu isə normal davam edir.
 
 ---
 
-## 9. Reusability qeydləri
+## 10. Reusability qeydləri
 
 - Modul daxilində heç bir konkret layihəyə aid import yoxdur
   (`from accounts.models import ...` kimi importlar qadağandır və
