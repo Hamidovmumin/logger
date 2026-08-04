@@ -38,7 +38,7 @@ Nümunə:
 
 ## 2. Quraşdırma
 
-Xarici paket asılılığı yoxdur. `django_view_logger` qovluğunu birbaşa
+Xarici paket asılılığı yoxdur. `logger` qovluğunu birbaşa
 layihənin kök qovluğuna (və ya hər hansı Python path-inə düşən yerə)
 köçürün:
 
@@ -56,7 +56,7 @@ your_project/
 Sonra istənilən yerdən belə import edin:
 
 ```python
-from django_view_logger import BaseLogger, ViewLogger
+from logger import BaseLogger, ViewLogger
 ```
 
 ---
@@ -68,7 +68,7 @@ task-ları, management command-lar, adi script-lər) də istifadə edilə
 bilər.
 
 ```python
-from django_view_logger import BaseLogger
+from logger import BaseLogger
 
 logger = BaseLogger(name="scraper.emlaksat")
 
@@ -99,7 +99,7 @@ task_logger.info("Tapşırıq başladı")
 
 ```python
 from django.http import JsonResponse
-from django_view_logger import ViewLogger
+from logger import ViewLogger
 
 
 def owner_list(request):
@@ -122,7 +122,7 @@ def owner_list(request):
 ```python
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from django_view_logger import ViewLogger
+from logger import ViewLogger
 
 
 class OwnerDetailView(APIView):
@@ -264,14 +264,14 @@ parametrini istifadə et. Bu, **Django-dan asılı deyil** — həm
 quraşdırılmayan mühitdə (adi script, Celery task) belə.
 
 ```python
-from django_view_logger import BaseLogger
+from logger import BaseLogger
 
 logger = BaseLogger(name="scraper.emlaksat", log_file="logs/app.log")
 logger.info("Scraping başladı", total_pages=50)
 ```
 
 ```python
-from django_view_logger import ViewLogger
+from logger import ViewLogger
 
 logger = ViewLogger.from_request(
     request,
@@ -315,7 +315,7 @@ sadəcə terminala yazır.
 ```python
 INSTALLED_APPS = [
     ...
-    "django_view_logger",
+    "logger",
 ]
 ```
 
@@ -337,14 +337,14 @@ işlətməyə ehtiyac yoxdur).
 Hər hansı logger yaradanda sadəcə `db_log=True` ötür:
 
 ```python
-from django_view_logger import BaseLogger
+from logger import BaseLogger
 
 logger = BaseLogger(name="scraper.emlaksat", db_log=True)
 logger.info("Scraping başladı")   # həm terminala, həm bazaya yazılır
 ```
 
 ```python
-from django_view_logger import ViewLogger
+from logger import ViewLogger
 
 logger = ViewLogger.from_request(request, view_name="owner_list", db_log=True)
 logger.request_started()          # həm terminala, həm bazaya yazılır
@@ -382,7 +382,7 @@ avtomatik admin panelində görünəcək (`django.contrib.admin`
 
 `BaseLogger` və `ViewLogger` Django quraşdırılmasa belə işləyir —
 `models.py` yalnız `db_log=True` olanda, məhz o an import edilir. Əgər
-Django yoxdursa və ya `django_view_logger` `INSTALLED_APPS`-a əlavə
+Django yoxdursa və ya `logger` `INSTALLED_APPS`-a əlavə
 edilməyibsə, DB yazma cəhdi səssizcə keçilir, proqram çökmür, terminal
 logu isə normal davam edir.
 
