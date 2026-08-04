@@ -3,7 +3,7 @@ import uuid
 
 class ViewLogger(BaseLogger):
     @classmethod
-    def from_request(cls, request,view_name:str,min_level="DEBUG", db_log=False):
+    def from_request(cls, request,view_name:str,min_level="DEBUG", db_log=False,log_file=None):
         user = getattr(request, 'user', None)
         user_id,username = cls._extract_user_info(user)
 
@@ -21,7 +21,7 @@ class ViewLogger(BaseLogger):
             context["query_params"] = query_params
 
         logger_name = f"view.{view_name}"
-        return cls(name=logger_name, context=context, min_level=min_level ,db_log=db_log)
+        return cls(name=logger_name, context=context, min_level=min_level ,db_log=db_log,log_file=log_file)
 
 
     @staticmethod

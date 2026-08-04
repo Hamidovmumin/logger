@@ -1,3 +1,4 @@
+import os
 from datetime import datetime
 import sys
 import traceback
@@ -40,11 +41,12 @@ DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 
 class BaseLogger:
 
-    def __init__(self,name="logger",context = None,min_level = "DEBUG",db_log=False):
+    def __init__(self,name="logger",context = None,min_level = "DEBUG",db_log=False,log_file=None):
         self.name = name
         self.context = context if context else {}
         self.min_level = min_level
         self.db_log =db_log
+        self.log_file = log_file
 
     def _mask_dict(self,data:dict)->dict:
         masked = {}
@@ -94,6 +96,16 @@ class BaseLogger:
         except Exception:
             pass
 
+    def _write_to_file(self,formatted_line):
+        try:
+            directory = os.path.dirname(self.log_file)
+            if directory:
+                os.makedirs(directory, exist_ok=True)
+            with open(self.log_file, "a", encoding="utf-8") as f:
+                f.write(formatted_line + "\n")
+        except Exception as exc:
+            sys.stderr.write(f"[django_view_logger] Fayla yazma xətası: {exc!r}\n")
+
     def _write(self, level, message, extra):
         if not self._is_enabled(level):
             return
@@ -102,6 +114,9 @@ class BaseLogger:
         stream = sys.stderr if level in STDERR_LEVELS else sys.stdout
         stream.write(formatted + "\n")
         stream.flush()
+
+        if self.log_file:
+            self._write_to_file(formatted)
 
         if self.db_log:
             self._persist_to_db(level,message,extra)
@@ -114,6 +129,7 @@ class BaseLogger:
             context = new_context,
             min_level = self.min_level,
             db_log=self.db_log,
+            log_file = self.log_file
         )
 
     def debug(self, message, **extra):

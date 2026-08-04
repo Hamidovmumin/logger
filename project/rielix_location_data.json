@@ -1,0 +1,1364 @@
+{
+  "model_fields": {
+    "City": [
+      {
+        "name": "id",
+        "type": "BigAutoField"
+      },
+      {
+        "name": "name",
+        "type": "CharField"
+      }
+    ],
+    "Area": [
+      {
+        "name": "id",
+        "type": "BigAutoField"
+      },
+      {
+        "name": "city",
+        "type": "ForeignKey",
+        "related_model": "City"
+      },
+      {
+        "name": "name",
+        "type": "CharField"
+      }
+    ],
+    "Village": [
+      {
+        "name": "id",
+        "type": "BigAutoField"
+      },
+      {
+        "name": "name",
+        "type": "CharField"
+      },
+      {
+        "name": "area",
+        "type": "ForeignKey",
+        "related_model": "Area"
+      }
+    ]
+  },
+  "data": {
+    "City": [
+      {
+        "id": 1,
+        "name": "Bakı",
+        "foreign_keys": {}
+      },
+      {
+        "id": 3,
+        "name": "Göyçay",
+        "foreign_keys": {}
+      },
+      {
+        "id": 4,
+        "name": "Lənkəran",
+        "foreign_keys": {}
+      },
+      {
+        "id": 5,
+        "name": "Sumqayıt",
+        "foreign_keys": {}
+      },
+      {
+        "id": 2,
+        "name": "Şəki",
+        "foreign_keys": {}
+      }
+    ],
+    "Area": [
+      {
+        "id": 1,
+        "name": "Abşeron r.",
+        "foreign_keys": {
+          "city": {
+            "id": 1,
+            "name": "Bakı",
+            "model": "City"
+          }
+        }
+      },
+      {
+        "id": 7,
+        "name": "Binəqədi r.",
+        "foreign_keys": {
+          "city": {
+            "id": 1,
+            "name": "Bakı",
+            "model": "City"
+          }
+        }
+      },
+      {
+        "id": 16,
+        "name": "Nizami r",
+        "foreign_keys": {
+          "city": {
+            "id": 1,
+            "name": "Bakı",
+            "model": "City"
+          }
+        }
+      },
+      {
+        "id": 2,
+        "name": "Nərimanov r.",
+        "foreign_keys": {
+          "city": {
+            "id": 1,
+            "name": "Bakı",
+            "model": "City"
+          }
+        }
+      },
+      {
+        "id": 10,
+        "name": "Nəsimi r.",
+        "foreign_keys": {
+          "city": {
+            "id": 1,
+            "name": "Bakı",
+            "model": "City"
+          }
+        }
+      },
+      {
+        "id": 11,
+        "name": "Pirallahı r.",
+        "foreign_keys": {
+          "city": {
+            "id": 1,
+            "name": "Bakı",
+            "model": "City"
+          }
+        }
+      },
+      {
+        "id": 9,
+        "name": "Qaradağ r.",
+        "foreign_keys": {
+          "city": {
+            "id": 1,
+            "name": "Bakı",
+            "model": "City"
+          }
+        }
+      },
+      {
+        "id": 12,
+        "name": "Sabunçu r.",
+        "foreign_keys": {
+          "city": {
+            "id": 1,
+            "name": "Bakı",
+            "model": "City"
+          }
+        }
+      },
+      {
+        "id": 14,
+        "name": "Suraxanı r.",
+        "foreign_keys": {
+          "city": {
+            "id": 1,
+            "name": "Bakı",
+            "model": "City"
+          }
+        }
+      },
+      {
+        "id": 13,
+        "name": "Səbail r.",
+        "foreign_keys": {
+          "city": {
+            "id": 1,
+            "name": "Bakı",
+            "model": "City"
+          }
+        }
+      },
+      {
+        "id": 3,
+        "name": "Xətai r.",
+        "foreign_keys": {
+          "city": {
+            "id": 1,
+            "name": "Bakı",
+            "model": "City"
+          }
+        }
+      },
+      {
+        "id": 8,
+        "name": "Xəzər r.",
+        "foreign_keys": {
+          "city": {
+            "id": 1,
+            "name": "Bakı",
+            "model": "City"
+          }
+        }
+      },
+      {
+        "id": 15,
+        "name": "Yasamal r.",
+        "foreign_keys": {
+          "city": {
+            "id": 1,
+            "name": "Bakı",
+            "model": "City"
+          }
+        }
+      }
+    ],
+    "Village": [
+      {
+        "id": 59,
+        "name": "1-ci mikrorayon",
+        "foreign_keys": {
+          "area": {
+            "id": 10,
+            "name": "Nəsimi r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 23,
+        "name": "2-ci Alatava",
+        "foreign_keys": {
+          "area": {
+            "id": 7,
+            "name": "Binəqədi r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 60,
+        "name": "2-ci mikrorayon",
+        "foreign_keys": {
+          "area": {
+            "id": 10,
+            "name": "Nəsimi r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 82,
+        "name": "20-ci sahə",
+        "foreign_keys": {
+          "area": {
+            "id": 13,
+            "name": "Səbail r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 24,
+        "name": "28 May",
+        "foreign_keys": {
+          "area": {
+            "id": 7,
+            "name": "Binəqədi r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 61,
+        "name": "3-ci mikrorayon",
+        "foreign_keys": {
+          "area": {
+            "id": 10,
+            "name": "Nəsimi r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 62,
+        "name": "4-ci mikrorayon",
+        "foreign_keys": {
+          "area": {
+            "id": 10,
+            "name": "Nəsimi r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 63,
+        "name": "5-ci mikrorayon",
+        "foreign_keys": {
+          "area": {
+            "id": 10,
+            "name": "Nəsimi r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 25,
+        "name": "6-cı mikrorayon",
+        "foreign_keys": {
+          "area": {
+            "id": 7,
+            "name": "Binəqədi r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 26,
+        "name": "7-ci mikrorayon",
+        "foreign_keys": {
+          "area": {
+            "id": 7,
+            "name": "Binəqədi r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 65,
+        "name": "8-ci kilometr",
+        "foreign_keys": {
+          "area": {
+            "id": 16,
+            "name": "Nizami r",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 27,
+        "name": "8-ci mikrorayon",
+        "foreign_keys": {
+          "area": {
+            "id": 7,
+            "name": "Binəqədi r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 28,
+        "name": "9-cu mikrorayon",
+        "foreign_keys": {
+          "area": {
+            "id": 7,
+            "name": "Binəqədi r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 67,
+        "name": "Albalılıq",
+        "foreign_keys": {
+          "area": {
+            "id": 12,
+            "name": "Sabunçu r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 5,
+        "name": "Atyalı",
+        "foreign_keys": {
+          "area": {
+            "id": 1,
+            "name": "Abşeron r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 35,
+        "name": "Ağ şəhər",
+        "foreign_keys": {
+          "area": {
+            "id": 3,
+            "name": "Xətai r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 4,
+        "name": "Aşağı Güzdək",
+        "foreign_keys": {
+          "area": {
+            "id": 1,
+            "name": "Abşeron r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 83,
+        "name": "Badamdar",
+        "foreign_keys": {
+          "area": {
+            "id": 13,
+            "name": "Səbail r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 87,
+        "name": "Bahar",
+        "foreign_keys": {
+          "area": {
+            "id": 14,
+            "name": "Suraxanı r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 68,
+        "name": "Bakıxanov",
+        "foreign_keys": {
+          "area": {
+            "id": 12,
+            "name": "Sabunçu r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 69,
+        "name": "Balaxanı",
+        "foreign_keys": {
+          "area": {
+            "id": 12,
+            "name": "Sabunçu r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 84,
+        "name": "Bayıl",
+        "foreign_keys": {
+          "area": {
+            "id": 13,
+            "name": "Səbail r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 85,
+        "name": "Bibiheybət",
+        "foreign_keys": {
+          "area": {
+            "id": 13,
+            "name": "Səbail r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 70,
+        "name": "Bilgəh",
+        "foreign_keys": {
+          "area": {
+            "id": 12,
+            "name": "Sabunçu r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 29,
+        "name": "Biləcəri",
+        "foreign_keys": {
+          "area": {
+            "id": 7,
+            "name": "Binəqədi r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 38,
+        "name": "Binə",
+        "foreign_keys": {
+          "area": {
+            "id": 8,
+            "name": "Xəzər r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 30,
+        "name": "Binəqədi",
+        "foreign_keys": {
+          "area": {
+            "id": 7,
+            "name": "Binəqədi r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 39,
+        "name": "Buzovna",
+        "foreign_keys": {
+          "area": {
+            "id": 8,
+            "name": "Xəzər r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 58,
+        "name": "Böyükşor",
+        "foreign_keys": {
+          "area": {
+            "id": 2,
+            "name": "Nərimanov r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 88,
+        "name": "Bülbülə",
+        "foreign_keys": {
+          "area": {
+            "id": 14,
+            "name": "Suraxanı r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 6,
+        "name": "Ceyranbatan",
+        "foreign_keys": {
+          "area": {
+            "id": 1,
+            "name": "Abşeron r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 8,
+        "name": "Digah",
+        "foreign_keys": {
+          "area": {
+            "id": 1,
+            "name": "Abşeron r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 40,
+        "name": "Dübəndi",
+        "foreign_keys": {
+          "area": {
+            "id": 8,
+            "name": "Xəzər r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 89,
+        "name": "Dədə Qorqud",
+        "foreign_keys": {
+          "area": {
+            "id": 14,
+            "name": "Suraxanı r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 9,
+        "name": "Fatmayı",
+        "foreign_keys": {
+          "area": {
+            "id": 1,
+            "name": "Abşeron r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 10,
+        "name": "Görədil",
+        "foreign_keys": {
+          "area": {
+            "id": 1,
+            "name": "Abşeron r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 91,
+        "name": "Günəşli",
+        "foreign_keys": {
+          "area": {
+            "id": 14,
+            "name": "Suraxanı r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 41,
+        "name": "Gürgən",
+        "foreign_keys": {
+          "area": {
+            "id": 8,
+            "name": "Xəzər r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 11,
+        "name": "Güzdək",
+        "foreign_keys": {
+          "area": {
+            "id": 1,
+            "name": "Abşeron r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 12,
+        "name": "Hökməli",
+        "foreign_keys": {
+          "area": {
+            "id": 1,
+            "name": "Abşeron r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 92,
+        "name": "Hövsan",
+        "foreign_keys": {
+          "area": {
+            "id": 14,
+            "name": "Suraxanı r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 2,
+        "name": "Həzi Aslanov",
+        "foreign_keys": {
+          "area": {
+            "id": 3,
+            "name": "Xətai r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 66,
+        "name": "Keşlə",
+        "foreign_keys": {
+          "area": {
+            "id": 16,
+            "name": "Nizami r",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 64,
+        "name": "Kubinka",
+        "foreign_keys": {
+          "area": {
+            "id": 10,
+            "name": "Nəsimi r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 13,
+        "name": "Köhnə Corat",
+        "foreign_keys": {
+          "area": {
+            "id": 1,
+            "name": "Abşeron r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 36,
+        "name": "Köhnə Günəşli",
+        "foreign_keys": {
+          "area": {
+            "id": 3,
+            "name": "Xətai r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 71,
+        "name": "Kürdəxanı",
+        "foreign_keys": {
+          "area": {
+            "id": 12,
+            "name": "Sabunçu r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 52,
+        "name": "Lökbatan",
+        "foreign_keys": {
+          "area": {
+            "id": 9,
+            "name": "Qaradağ r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 33,
+        "name": "M.Ə.Rəsulzadə",
+        "foreign_keys": {
+          "area": {
+            "id": 7,
+            "name": "Binəqədi r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 15,
+        "name": "Masazır",
+        "foreign_keys": {
+          "area": {
+            "id": 1,
+            "name": "Abşeron r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 94,
+        "name": "Massiv A",
+        "foreign_keys": {
+          "area": {
+            "id": 14,
+            "name": "Suraxanı r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 95,
+        "name": "Massiv B",
+        "foreign_keys": {
+          "area": {
+            "id": 14,
+            "name": "Suraxanı r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 96,
+        "name": "Massiv D",
+        "foreign_keys": {
+          "area": {
+            "id": 14,
+            "name": "Suraxanı r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 97,
+        "name": "Massiv G",
+        "foreign_keys": {
+          "area": {
+            "id": 14,
+            "name": "Suraxanı r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 98,
+        "name": "Massiv V",
+        "foreign_keys": {
+          "area": {
+            "id": 14,
+            "name": "Suraxanı r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 72,
+        "name": "Maştağa",
+        "foreign_keys": {
+          "area": {
+            "id": 12,
+            "name": "Sabunçu r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 16,
+        "name": "Mehdiabad",
+        "foreign_keys": {
+          "area": {
+            "id": 1,
+            "name": "Abşeron r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 53,
+        "name": "Müşfiqabad",
+        "foreign_keys": {
+          "area": {
+            "id": 9,
+            "name": "Qaradağ r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 17,
+        "name": "Məmmədli",
+        "foreign_keys": {
+          "area": {
+            "id": 1,
+            "name": "Abşeron r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 43,
+        "name": "Mərdəkan",
+        "foreign_keys": {
+          "area": {
+            "id": 8,
+            "name": "Xəzər r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 37,
+        "name": "NZS",
+        "foreign_keys": {
+          "area": {
+            "id": 3,
+            "name": "Xətai r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 73,
+        "name": "Nardaran",
+        "foreign_keys": {
+          "area": {
+            "id": 12,
+            "name": "Sabunçu r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 18,
+        "name": "Novxanı",
+        "foreign_keys": {
+          "area": {
+            "id": 1,
+            "name": "Abşeron r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 74,
+        "name": "Pirşağı",
+        "foreign_keys": {
+          "area": {
+            "id": 12,
+            "name": "Sabunçu r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 19,
+        "name": "Pirəkəşkül",
+        "foreign_keys": {
+          "area": {
+            "id": 1,
+            "name": "Abşeron r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 54,
+        "name": "Puta",
+        "foreign_keys": {
+          "area": {
+            "id": 9,
+            "name": "Qaradağ r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 42,
+        "name": "Qala",
+        "foreign_keys": {
+          "area": {
+            "id": 8,
+            "name": "Xəzər r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 93,
+        "name": "Qaraçuxur",
+        "foreign_keys": {
+          "area": {
+            "id": 14,
+            "name": "Suraxanı r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 14,
+        "name": "Qobu",
+        "foreign_keys": {
+          "area": {
+            "id": 1,
+            "name": "Abşeron r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 51,
+        "name": "Qobustan",
+        "foreign_keys": {
+          "area": {
+            "id": 9,
+            "name": "Qaradağ r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 50,
+        "name": "Qızıldaş",
+        "foreign_keys": {
+          "area": {
+            "id": 9,
+            "name": "Qaradağ r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 75,
+        "name": "Ramana",
+        "foreign_keys": {
+          "area": {
+            "id": 12,
+            "name": "Sabunçu r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 76,
+        "name": "Sabunçu",
+        "foreign_keys": {
+          "area": {
+            "id": 12,
+            "name": "Sabunçu r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 55,
+        "name": "Sahil",
+        "foreign_keys": {
+          "area": {
+            "id": 9,
+            "name": "Qaradağ r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 20,
+        "name": "Saray",
+        "foreign_keys": {
+          "area": {
+            "id": 1,
+            "name": "Abşeron r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 77,
+        "name": "Savalan",
+        "foreign_keys": {
+          "area": {
+            "id": 12,
+            "name": "Sabunçu r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 78,
+        "name": "Sea Breeze",
+        "foreign_keys": {
+          "area": {
+            "id": 12,
+            "name": "Sabunçu r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 34,
+        "name": "Sulutəpə",
+        "foreign_keys": {
+          "area": {
+            "id": 7,
+            "name": "Binəqədi r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 99,
+        "name": "Suraxanı",
+        "foreign_keys": {
+          "area": {
+            "id": 14,
+            "name": "Suraxanı r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 56,
+        "name": "Səngəçal",
+        "foreign_keys": {
+          "area": {
+            "id": 9,
+            "name": "Qaradağ r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 47,
+        "name": "Türkan",
+        "foreign_keys": {
+          "area": {
+            "id": 8,
+            "name": "Xəzər r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 31,
+        "name": "Xocəsən",
+        "foreign_keys": {
+          "area": {
+            "id": 7,
+            "name": "Binəqədi r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 32,
+        "name": "Xutor",
+        "foreign_keys": {
+          "area": {
+            "id": 7,
+            "name": "Binəqədi r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 104,
+        "name": "Yasamal",
+        "foreign_keys": {
+          "area": {
+            "id": 15,
+            "name": "Yasamal r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 79,
+        "name": "Yeni Balaxanı",
+        "foreign_keys": {
+          "area": {
+            "id": 12,
+            "name": "Sabunçu r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 21,
+        "name": "Yeni Corat",
+        "foreign_keys": {
+          "area": {
+            "id": 1,
+            "name": "Abşeron r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 101,
+        "name": "Yeni Günəşli",
+        "foreign_keys": {
+          "area": {
+            "id": 14,
+            "name": "Suraxanı r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 80,
+        "name": "Yeni Ramana",
+        "foreign_keys": {
+          "area": {
+            "id": 12,
+            "name": "Sabunçu r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 102,
+        "name": "Yeni Suraxanı",
+        "foreign_keys": {
+          "area": {
+            "id": 14,
+            "name": "Suraxanı r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 105,
+        "name": "Yeni Yasamal",
+        "foreign_keys": {
+          "area": {
+            "id": 15,
+            "name": "Yasamal r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 81,
+        "name": "Zabrat",
+        "foreign_keys": {
+          "area": {
+            "id": 12,
+            "name": "Sabunçu r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 48,
+        "name": "Zirə",
+        "foreign_keys": {
+          "area": {
+            "id": 8,
+            "name": "Xəzər r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 22,
+        "name": "Zuğulba",
+        "foreign_keys": {
+          "area": {
+            "id": 1,
+            "name": "Abşeron r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 103,
+        "name": "Zığ",
+        "foreign_keys": {
+          "area": {
+            "id": 14,
+            "name": "Suraxanı r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 7,
+        "name": "Çiçək",
+        "foreign_keys": {
+          "area": {
+            "id": 1,
+            "name": "Abşeron r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 44,
+        "name": "Şağan",
+        "foreign_keys": {
+          "area": {
+            "id": 8,
+            "name": "Xəzər r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 45,
+        "name": "Şimal DRES",
+        "foreign_keys": {
+          "area": {
+            "id": 8,
+            "name": "Xəzər r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 57,
+        "name": "Şubanı",
+        "foreign_keys": {
+          "area": {
+            "id": 9,
+            "name": "Qaradağ r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 46,
+        "name": "Şüvəlan",
+        "foreign_keys": {
+          "area": {
+            "id": 8,
+            "name": "Xəzər r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 86,
+        "name": "Şıxov",
+        "foreign_keys": {
+          "area": {
+            "id": 13,
+            "name": "Səbail r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 100,
+        "name": "Şərq",
+        "foreign_keys": {
+          "area": {
+            "id": 14,
+            "name": "Suraxanı r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 1,
+        "name": "Əhmədli",
+        "foreign_keys": {
+          "area": {
+            "id": 3,
+            "name": "Xətai r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 49,
+        "name": "Ələt",
+        "foreign_keys": {
+          "area": {
+            "id": 9,
+            "name": "Qaradağ r.",
+            "model": "Area"
+          }
+        }
+      },
+      {
+        "id": 90,
+        "name": "Əmircan",
+        "foreign_keys": {
+          "area": {
+            "id": 14,
+            "name": "Suraxanı r.",
+            "model": "Area"
+          }
+        }
+      }
+    ]  
+  }
+}
