@@ -118,3 +118,9 @@ env
 celerybeat-schedule
 project/templates/
 project/static/docs/
+project/accounts/
+project/crud/
+project/properties/
+project/scrape/
+project/telegram/
+project/utils/
